@@ -101,7 +101,7 @@ function App() {
           </div>
         </div>
       ) : (
-        <div>თამჩაჩ შენი ქულაა {points}</div>
+        <div className='result'>თამჩაჩ შენი ქულაა {points}</div>
       )}
     </div>
   );
