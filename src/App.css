@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .App-logo {
@@ -7,6 +11,28 @@
   pointer-events: none;
 }
 
+.wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 440px;
+}
+
+.question {
+  margin-bottom: 50px;
+  border: 2px solid burlywood;
+  background-color: cadetblue;
+  flex-basis: 100%;
+  padding: 20px;
+}
+
+.answer {
+  width: 200px;
+  margin: 20px;
+  cursor: pointer;
+  background-color: chocolate;
+  padding: 25px;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
