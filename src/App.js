@@ -63,7 +63,6 @@ function App() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [points, setPoints] = useState(0);
   const [showScore, setShowScore] = useState(true);
-  const [correctAnswer, setCorrectAnswer] = useState(false);
 
   const hanldeClickQeustion = answer => {
     const nextQuestion = currentQuestion + 1;
@@ -107,7 +106,6 @@ function App() {
               );
             })}
           </div>
-          {/* <button onClick={() => hanldeClickQeustion()}>შემდეგი კითხვა</button> */}
           <h3>
             {points} / {questions.length}
           </h3>
