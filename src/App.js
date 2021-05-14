@@ -69,7 +69,6 @@ function App() {
     setCurrentQuestion(nextQuestion + 1);
 
     if (answer) {
-      setCorrectAnswer(true);
       setPoints(prev => prev + 1);
     }
 
