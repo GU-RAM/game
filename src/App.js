@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+// import tamo from 'tamo.jpg';
 
 function App() {
   const questions = [
@@ -62,12 +63,14 @@ function App() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [points, setPoints] = useState(0);
   const [showScore, setShowScore] = useState(true);
+  const [correctAnswer, setCorrectAnswer] = useState(false);
 
-  const hanldeClicQeustion = answer => {
+  const hanldeClickQeustion = answer => {
     const nextQuestion = currentQuestion + 1;
     setCurrentQuestion(nextQuestion + 1);
 
     if (answer) {
+      setCorrectAnswer(true);
       setPoints(prev => prev + 1);
     }
 
@@ -76,6 +79,12 @@ function App() {
     } else {
       setShowScore(false);
     }
+  };
+
+  const playAgain = () => {
+    setCurrentQuestion(0);
+    setPoints(0);
+    setShowScore(true);
   };
 
   return (
@@ -90,17 +99,26 @@ function App() {
               return (
                 <button
                   className='answer'
+                  onClick={() => hanldeClickQeustion(el.isCorrect)}
                   key={i}
-                  onClick={() => hanldeClicQeustion(el.isCorrect)}
                 >
                   {el.answerText}
                 </button>
               );
             })}
           </div>
+          {/* <button onClick={() => hanldeClickQeustion()}>შემდეგი კითხვა</button> */}
+          <h3>
+            {points} / {questions.length}
+          </h3>
         </div>
       ) : (
-        <div className='result'>თამჩაჩ შენი ქულაა {points}</div>
+        <div className='result'>
+          <h3>
+            თამჩაჩ შენი ქულაა {points} / {questions.length}
+          </h3>
+          <button onClick={playAgain}>ითამაშე თავიდან</button>
+        </div>
       )}
     </div>
   );

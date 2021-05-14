@@ -4,6 +4,8 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-color: #85ffbd;
+  background-image: linear-gradient(45deg, #85ffbd 0%, #fffb7d 100%);
 }
 
 .App-logo {
@@ -34,14 +36,39 @@
   padding: 25px;
 }
 
+.correctAnswer {
+  width: 200px;
+  margin: 20px;
+  cursor: pointer;
+  background-color: green;
+  padding: 25px;
+}
+
 .result {
   width: 100vw;
   height: 100vh;
-  background-color: cornflowerblue;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   font-size: 30px;
+  background-image: url('tamo.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+button {
+  background-color: #00dbde;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+  border-radius: 10px;
+}
+
+button:hover {
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px,
+    rgba(17, 17, 26, 0.05) 0px 8px 32px;
 }
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
